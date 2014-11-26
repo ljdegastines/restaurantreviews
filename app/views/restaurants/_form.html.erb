@@ -1,0 +1,22 @@
+<%= bootstrap_form_for(@restaurant) do |f| %>
+
+  <% if @restaurant.errors %>
+    <div id="error_explanation">
+      <ul>
+      <% @restaurant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.text_field :name %>
+
+  <%= f.text_field :address %>
+
+  <%= f.telephone_field :phone_number %>
+
+  <%= f.select :category, Restaurant.category.options %>
+
+  <%= f.submit "Save restaurant", class: "btn btn-primary" %>
+<% end %>

@@ -1,2 +1,9 @@
-<h1>Restaurants#index</h1>
-<p>Find me in app/views/restaurants/index.html.erb</p>
+<% content_for(:title) do %>
+  Super liste qui tue
+<% end %>
+
+<h1>List of restaurants</h1>
+<%= link_to "Create new restaurant", new_restaurant_path, class: "btn btn-primary" %>
+<% @restaurants.each do |t| %>
+  <%= render "restaurant", restaurant: t %>
+<% end %>

@@ -1,23 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'reviews/create'
-
-  get 'reviews/new'
-
-  get 'restaurants/index'
-
-  get 'restaurants/create'
-
-  get 'restaurants/new'
-
-  get 'restaurants/show'
-
-  get 'index/create'
-
-  get 'index/new'
-
-  get 'index/show'
-
   root 'restaurants#index'
 
   resources :restaurants, only: [:index, :show, :new, :create] do
